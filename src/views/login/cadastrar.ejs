@@ -1,0 +1,46 @@
+<%- include('../includes/header'); %>
+    <div class="container-fluid vh-100">
+        <div class="row h-100 bg-dark justify-content-center align-items-center">
+            <div class="col-sm-8 col-md-4 my-3">
+                <div class="login-box">
+                    <div class="card card-outline card-primary">
+                        <div class="card-header text-center">
+                            <a href="#" class="h1"><b>Agenda</a>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-center">Insira os dados abaixo</p>
+                            <form class="form-cadastro" action="/login/registrar" method="post">
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Email" name="email">                           
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="password" class="form-control" placeholder="Senha" name="password">           
+                                </div>
+
+                                <%- include('../includes/messages') %>
+
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <div class="row p-2">
+                                    <div class="col-lg-8">
+                                        <div class="icheck-primary">
+                                            <input type="checkbox" id="remember">
+                                            <label for="remember">Lembre-me</label>
+                                        </div>
+                                    </div>     
+                                    <div class="col-lg-4 p-1 p-lg-0">
+                                        <button type="submit" class="btn btn-primary btn-block w-100">Cadastrar</button>
+                                    </div>                                
+                                </div>
+                                <div class="row justify-content-end">
+                                    <div class="col-auto">
+                                        <a href="/login" class=" btn-block w-100">Voltar</a>
+                                    </div>                           
+                                </div>
+                            </form>                            
+                        </div>                   
+                    </div>
+                </div>
+            </div>       
+        </div>
+    </div>
+<%- include('../includes/footer'); %>

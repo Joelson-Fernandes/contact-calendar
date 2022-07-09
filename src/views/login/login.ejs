@@ -1,0 +1,44 @@
+<%- include('../includes/header'); %>
+    <div class="container-fluid vh-100">
+        <div class="row h-100 bg-dark justify-content-center align-items-center">
+            <div class="col-sm-8 col-md-4 my-3">
+                <div class="login-box">
+                    <div class="card card-outline card-primary">
+                        <div class="card-header text-center">
+                            <a href="#" class="h1"><b>Agenda</a>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-center">Faça login para iniciar sua sessão</p>
+                            <form class="form-login" action="/login/autenticar" method="post">
+
+                                <%- include('../includes/messages') %>
+
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Email" name="email" >                           
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="password" class="form-control" placeholder="Senha" name="password" >           
+                                </div>
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <div class="row p-2">
+                                    <div class="col-lg-8">
+                                        <div class="icheck-primary">
+                                            <input type="checkbox" id="remember">
+                                            <label for="remember">Lembre-me</label>
+                                        </div>
+                                    </div>          
+                                    <div class="col-lg-4 p-3 p-lg-0">
+                                        <button type="submit" class="btn btn-primary btn-block w-100">Entrar</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="mb-0">
+                                <a href="/cadastrar">Cadastrar novo usuario</a>                              
+                            </p>                              
+                        </div>                   
+                    </div>
+                </div>
+            </div>       
+        </div>
+    </div>
+<%- include('../includes/footer'); %>
